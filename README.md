@@ -2,7 +2,7 @@
 My Machine Learning &amp; Deep Learning projects
 ## 📝 CONTRIBUTIONS
 
-Before doing any contribution read <a href="https://github.com/DEADSEC-SECURITY/pretty-downloader/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>.
+Before doing any contribution read <a href="https://github.com/DEADSEC-SECURITY/ML-DL/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>.
 
 ## 📧 CONTACT
 
