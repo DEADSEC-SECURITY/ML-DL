@@ -11,9 +11,9 @@ How to use:
 - Training the model:
 iris = IrisClass()
 iris.train_model()
-iris.plot_loss() -> Will display a graph with the loss
-iris.plot_accuracy() -> Will display a graph with accuracy
-iris.save_model() -> Save model to file
+iris.plot_loss() # Will display a graph with the loss
+iris.plot_accuracy() # Will display a graph with accuracy
+iris.save_model() # Save model to file
 
 - Make prediction:
 iris = IrisClass()
@@ -26,7 +26,7 @@ data = {
     'PetalWidthCm': [2, 1]
 }
 data = pd.DataFrame(data=data)
-predictions = iris.make_prediction()
+predictions = iris.make_prediction(data)
 print(predictions) # This returns a 2D array of predictions and percentages
 """
 
@@ -62,20 +62,20 @@ class IrisClass():
         if self.logging:
             log_dir = f'{self.log_file}/fit/' + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
             tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
-            self.model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=300, callbacks=[tensorboard_callback])
+            self.fitted_model = self.model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=300, callbacks=[tensorboard_callback])
         else:
-            self.model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=300)
+            self.fitted_model = self.model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=300)
 
     def plot_loss(self):
         plt.title('Loss')
-        plt.plot(self.model.history['loss'], label='loss')
-        plt.plot(self.model.history['val_loss'], label='val_loss')
+        plt.plot(self.fitted_model.history['loss'], label='loss')
+        plt.plot(self.fitted_model.history['val_loss'], label='val_loss')
         plt.show()
 
     def plot_accuracy(self):
         plt.title('Accuracy')
-        plt.plot(self.model.history['accuracy'], label='acc')
-        plt.plot(self.model.history['val_accuracy'], label='val_acc')
+        plt.plot(self.fitted_model.history['accuracy'], label='acc')
+        plt.plot(self.fitted_model.history['val_accuracy'], label='val_acc')
         plt.show()
 
     def save_model(self):

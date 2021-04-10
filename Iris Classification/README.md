@@ -23,9 +23,9 @@ Training the model:
 ```python
 iris = IrisClass()
 iris.train_model()
-iris.plot_loss() -> Will display a graph with the loss
-iris.plot_accuracy() -> Will display a graph with accuracy
-iris.save_model() -> Save model to file
+iris.plot_loss() # Will display a graph with the loss
+iris.plot_accuracy() # Will display a graph with accuracy
+iris.save_model() # Save model to file
 ```
 Make prediction:
 ```python
@@ -39,7 +39,7 @@ data = {
     'PetalWidthCm': [2, 1]
 }
 data = pd.DataFrame(data=data)
-predictions = iris.make_prediction()
+predictions = iris.make_prediction(data)
 print(predictions) # This returns a 2D array of predictions and percentages
 ```
 
