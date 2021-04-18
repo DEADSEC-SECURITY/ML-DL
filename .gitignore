@@ -127,4 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-/Dog VS Cat Classification/Data/
+/Dog VS Cat Classification/Data/*
+/Dog VS Cat Classification/Predict/*
+/Dog VS Cat Classification/Data.rar
