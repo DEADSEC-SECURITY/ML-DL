@@ -3,7 +3,7 @@ import numpy as np
 
 import tensorflow as tf
 from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Dense, Input, LSTM
+from tensorflow.keras.layers import Dense, Input, LSTM, SimpleRNN
 from tensorflow.keras.optimizers import SGD, Adam
 from sklearn.model_selection import train_test_split
 
@@ -21,7 +21,7 @@ hidden_layers = 100
 model.add(Input(shape=x_train.shape[1]))
 
 for x in range(hidden_layers):
-    model.add(Dense(x_train.shape[1]*8, activation='relu'))
+    model.add(Dense(x_train.shape[1]*8, activation=None))
 
 model.add(Dense(1))
 
@@ -54,5 +54,5 @@ prediction = np.round(prediction)
 
 true_prediction = [5, 8, 3, 6]
 
-print(prediction)
-print(true_prediction)
+print(f'Predicted: {prediction}')
+print(f'True Values: {true_prediction}')
