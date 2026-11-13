@@ -25,7 +25,7 @@ opt-einsum==3.3.0
 pandas==1.2.3
 Pillow==8.2.0
 protobuf==3.15.8
-pyasn1==0.4.8
+pyasn1==0.6.5
 pyasn1-modules==0.2.8
 pyparsing==2.4.7
 python-dateutil==2.8.1
